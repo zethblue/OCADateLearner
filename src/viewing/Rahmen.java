@@ -22,6 +22,7 @@ public class Rahmen extends JFrame {
         JButton saveDateButton = new JButton("Save Date");
         JButton saveTimeButton = new JButton("Save Time");
 
+
         JPanel aktuellPanel = new JPanel();
         aktuellPanel.setLayout(new GridLayout(3,2));
         aktuellPanel.add(aktuellBeschreibung);
@@ -42,10 +43,13 @@ public class Rahmen extends JFrame {
         JButton buttonChangeTime = new JButton("Change Time");
         JButton buttonChangeDate = new JButton("Change Date");
         JButton buttonCombine = new JButton("Combine to Datetime");
+        JButton buttonChangeFormat = new JButton("change Format");
+        JButton buttonClearAllLists = new JButton("Clear all Lists");
 
-        buttonList.setLayout(new GridLayout(2,2));
+        buttonList.setLayout(new GridLayout(3,2));
         buttonList.add(buttonChangeDate);buttonList.add(buttonChangeTime);
         buttonList.add(buttonCombine);buttonList.add(buttonAusgabeListe);
+        buttonList.add(buttonChangeFormat); buttonList.add(buttonClearAllLists);
 
 
 
@@ -75,6 +79,11 @@ public class Rahmen extends JFrame {
         buttonCombine.addActionListener(e ->{
             if(C1.nullPointerEvasion())new CombineRahmen(C1);
         } );
+        buttonClearAllLists.addActionListener(e -> C1.clearallLists());
+        buttonChangeFormat.addActionListener(e -> {
+            if(C1.nullPointerEvasion()){
+            C1.setWhichFormatHasDate();}
+        });
 
 
     }
